@@ -1,39 +1,72 @@
 # Traffic Bot
 
-A Traffic Assistance app to calculate driving routes, distances, and durations between two cities using OpenRouteService (ORS) API.
+Traffic Bot is a full-stack application that helps users calculate routes between cities using the OpenRouteService API. It provides distance and estimated travel time for driving routes.
 
 ## Features
-- Backend API with Node.js & Express for calculating routes.
-- React Native mobile app (Expo) to input origin and destination.
-- Returns distance (in km) and duration (in minutes).
 
-## Technologies Used
-- Backend: Node.js, Express, CORS, node-fetch, dotenv
-- Mobile App: React Native, Expo
-- API: OpenRouteService (ORS)
+* Enter origin and destination cities.
+* Fetch distance (in km) and duration (in minutes).
+* Backend built with Node.js & Express.
+* Frontend built with React Native.
+* Handles errors if cities are not found or route is unavailable.
 
-## Setup Instructions
+## Tech Stack
 
-### Backend
-1. Navigate to backend folder:
+* **Backend:** Node.js, Express, Node-Fetch
+* **Frontend:** React Native
+* **API:** OpenRouteService (ORS)
+* **Other:** CORS, dotenv
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/traffic-bot.git
+   cd traffic-bot
+   ```
+
+2. Install backend dependencies:
+
+   ```bash
    cd backend
-2. Install dependencies:
    npm install
-3. Create a `.env` file with:
-   PORT=3000
+   ```
+
+3. Install frontend dependencies:
+
+   ```bash
+   cd ../frontend
+   npm install
+   ```
+
+4. Create a `.env` file in backend folder with your ORS API key:
+
+   ```
    ORS_API_KEY=your_openrouteservice_api_key
-4. Start the server:
+   PORT=3000
+   ```
+
+5. Run backend:
+
+   ```bash
+   cd ../backend
    node server.js
+   ```
 
-### Mobile App
-1. Navigate to mobile app folder:
-   cd mobile-app-new
-2. Install dependencies:
-   npm install
-3. Start Expo:
-   npx expo start
-4. Make sure the backend server is running and update the IP in `fetch` URL inside `HomeScreen.js`.
+6. Run React Native app:
 
-## Notes
-- Backend must be running for the mobile app to fetch routes.
-- Node.js version 18 is recommended for Expo SDK 46+.
+   ```bash
+   cd ../frontend
+   npx react-native run-android   # or run-ios
+   ```
+
+## Usage
+
+* Open the app on your device/emulator.
+* Enter origin and destination cities.
+* Press **Get Route** to see distance and estimated travel time.
+
+## License
+
+MIT
